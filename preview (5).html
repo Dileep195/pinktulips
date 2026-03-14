@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pink Tulips 🌷</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial, sans-serif;
+background:linear-gradient(180deg,#ffd9ea,#ffeaf3);
+text-align:center;
+padding:40px 20px;
+overflow-x:hidden;
+}
+
+/* title */
+
+h1{
+color:#c2185b;
+font-size:28px;
+margin-bottom:25px;
+}
+
+/* bouquet */
+
+.bouquet{
+width:85%;
+max-width:340px;
+display:block;
+margin:auto;
+}
+
+/* message */
+
+.message{
+margin-top:25px;
+font-size:18px;
+color:#880e4f;
+line-height:1.6;
+}
+
+/* petals */
+
+.petal{
+position:fixed;
+top:-40px;
+background:#ff9ecb;
+border-radius:50%;
+opacity:0.6;
+pointer-events:none;
+animation:fall linear infinite;
+}
+
+/* gentle falling */
+
+@keyframes fall{
+
+0%{
+transform:translateY(-40px) translateX(0) rotate(0deg);
+}
+
+50%{
+transform:translateY(50vh) translateX(25px) rotate(180deg);
+}
+
+100%{
+transform:translateY(110vh) translateX(-25px) rotate(360deg);
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Pink Tulips for Anvesha 🌷</h1>
+
+<img class="bouquet" src="tulips.png" alt="Pink Tulip Bouquet">
+
+<div class="message">
+If I could send real tulips through the screen, I would…<br><br>
+until then, let this little bouquet bloom just for you 🌷
+</div>
+
+<script>
+
+/* create soft floating petals */
+
+for(let i=0;i<20;i++){
+
+let petal=document.createElement("div");
+petal.classList.add("petal");
+
+let size = Math.random()*8 + 6;
+
+petal.style.width=size+"px";
+petal.style.height=size*1.4+"px";
+
+petal.style.left=Math.random()*100+"vw";
+petal.style.animationDuration=(8+Math.random()*6)+"s";
+petal.style.opacity=Math.random()*0.5 + 0.3;
+
+document.body.appendChild(petal);
+
+}
+
+</script>
+
+</body>
+</html>
